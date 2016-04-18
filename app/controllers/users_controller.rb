@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Account created!"
-      redirect_to @user
+      redirect_to links_path
     else
       flash.now[:error] = "Invalid email or password."
       render :new

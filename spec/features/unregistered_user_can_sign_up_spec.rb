@@ -17,5 +17,6 @@ RSpec.feature "Unregistered users can create a new account" do
 
     expect(page).to have_content "Account created!"
     expect(User.last.email).to eq email
+    expect(current_path).to eq links_path
   end
 end
