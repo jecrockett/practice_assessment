@@ -98,4 +98,10 @@ RSpec.configure do |config|
     fill_in "Password", with: "i like socks"
     click_button "Login"
   end
+
+  def add_link_one
+    fill_in "Title", with: "Aardvark"
+    fill_in "Url", with: "http://www.aardvark.edu"
+    click_on "Submit"
+  end
 end
