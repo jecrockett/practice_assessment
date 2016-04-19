@@ -24,7 +24,19 @@ RSpec.feature "User submits a link" do
 
   context "submission is missing a field" do
     xit "throws an error that a field is missing" do
+      url = "http://r.ddmcdn.com/s_f/o_1/cx_633/cy_0/cw_1725/ch_1725/w_720/APL/uploads/2014/11/too-cute-doggone-it-video-playlist.jpg"
+      login_user
 
+      expect(current_path).to eq links_path
+      within '#new-link-form' do
+        expect(page).to have_content "Title"
+        expect(page).to have_content "Url"
+      end
+
+      fill_in "Url", with: url
+      click_on "Submit"
+
+      expect(page).to have_content "Missing fields or invalid URL."
     end
   end
 
