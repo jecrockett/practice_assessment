@@ -14,8 +14,8 @@ class LinksController < ApplicationController
       flash[:notice] = "#{@link.title} was created!"
       redirect_to links_path
     else
-      flash.now[:error] = "Missing fields or invalid URL."
-      render :index
+      flash[:error] = "Missing fields or invalid URL."
+      redirect_to links_path
     end
   end
 

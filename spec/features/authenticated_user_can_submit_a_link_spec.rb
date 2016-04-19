@@ -23,7 +23,7 @@ RSpec.feature "User submits a link" do
   end
 
   context "submission is missing a field" do
-    xit "throws an error that a field is missing" do
+    it "throws an error that a field is missing" do
       url = "http://r.ddmcdn.com/s_f/o_1/cx_633/cy_0/cw_1725/ch_1725/w_720/APL/uploads/2014/11/too-cute-doggone-it-video-playlist.jpg"
       login_user
 
