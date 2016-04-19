@@ -1,1 +1,30 @@
 <h1>Links</h1>
+
+<div id="new-link-form">
+  <%= form_for(@new_link) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+
+    <%= f.submit "Submit" %>
+  <% end %>
+</div>
+
+<div id="links-container">
+  <% @links.each do |link| %>
+    <div>
+      <p>
+        <%= link.title %>
+      </p>
+      <p>
+        <%= link.url %>
+      </p>
+      <p>
+        Read: <%= link.read_status %>
+      </p>
+    </div>
+  <% end %>
+
+</div>
